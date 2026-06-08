@@ -1,0 +1,145 @@
+/* ── Fixed Header ── */
+.thread-create-page .fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 24px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.thread-create-page .site-title-btn {
+  font-size: 32px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  padding: 0;
+  line-height: 1;
+  font-family: inherit;
+}
+
+.thread-create-page .site-title-btn:hover {
+  color: #0066cc;
+}
+
+/* ── Main Content ── */
+.thread-create-page .main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px 40px;
+}
+
+/* ── Create Form ── */
+.create-form {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  background: #fff;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 20px;
+  color: #1a1a1a;
+}
+
+/* ── Form fields ── */
+.thread-create-page .form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thread-create-page .form-input {
+  width: 100%;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background: #fff;
+  color: #1a1a1a;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.thread-create-page .form-input::placeholder {
+  color: #aaa;
+}
+
+.thread-create-page .form-input:focus {
+  border-color: #0066cc;
+}
+
+.thread-create-page .form-textarea {
+  resize: vertical;
+  min-height: 40px;
+  height: 160px;
+  line-height: 1.6;
+}
+
+/* ── Error ── */
+.thread-create-page .form-error {
+  font-size: 14px;
+  color: #c0392b;
+  margin: 10px 0 0;
+}
+
+/* ── Button group ── */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-create {
+  width: 180px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: inherit;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-create:hover:not(:disabled) {
+  background: #333;
+}
+
+.btn-create:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  width: 180px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-family: inherit;
+  background: #fff;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-cancel:hover {
+  background: #f5f5f5;
+}

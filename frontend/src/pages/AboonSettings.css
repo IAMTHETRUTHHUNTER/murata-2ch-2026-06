@@ -1,0 +1,177 @@
+/* ── Fixed Header ── */
+.aboon-settings-page .fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 24px;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.aboon-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 8px;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+}
+
+.aboon-settings-page .header-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-logout {
+  font-size: 14px;
+  font-family: inherit;
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.15s;
+}
+
+.btn-logout:hover {
+  background: #f5f5f5;
+}
+
+/* ── Main Content ── */
+.aboon-settings-page .main-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 110px 24px 40px;
+}
+
+/* ── Section title ── */
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 14px;
+  color: #1a1a1a;
+}
+
+/* ── NGword list section ── */
+.ngword-section {
+  margin-bottom: 32px;
+}
+
+.empty-msg {
+  font-size: 16px;
+  color: #888;
+  margin: 0;
+}
+
+.error-msg {
+  font-size: 14px;
+  color: #c0392b;
+  margin: 0 0 8px;
+}
+
+/* ── NGword list ── */
+.ngword-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ngword-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ngword-item:last-child {
+  border-bottom: none;
+}
+
+/* ── Trash icon button ── */
+.btn-trash {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e53935;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.btn-trash:hover {
+  color: #b71c1c;
+}
+
+/* ── NGword text ── */
+.ngword-text {
+  font-size: 16px;
+  color: #1a1a1a;
+  word-break: break-all;
+}
+
+/* ── Add section ── */
+.ngword-add-section {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 20px;
+  background: #fff;
+}
+
+.ngword-input {
+  width: 100%;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background: #fff;
+  color: #1a1a1a;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+  margin-bottom: 8px;
+}
+
+.ngword-input::placeholder {
+  color: #aaa;
+}
+
+.ngword-input:focus {
+  border-color: #0066cc;
+}
+
+.add-error-msg {
+  margin-bottom: 8px;
+}
+
+.btn-add {
+  padding: 8px 24px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-add:hover:not(:disabled) {
+  background: #333;
+}
+
+.btn-add:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}

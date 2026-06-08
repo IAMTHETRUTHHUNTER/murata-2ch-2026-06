@@ -1,0 +1,276 @@
+/* ── Fixed Header ── */
+.thread-detail-page .fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 24px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.site-title-btn {
+  font-size: 32px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  padding: 0;
+  line-height: 1;
+}
+
+.site-title-btn:hover {
+  color: #0066cc;
+}
+
+/* ── Main Content ── */
+.thread-detail-page .main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px 40px;
+}
+
+/* ── State messages ── */
+.state-message {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-top: 60px;
+}
+
+.state-message.error {
+  color: #c0392b;
+}
+
+.state-sub {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+  margin-top: 8px;
+}
+
+/* ── Thread info ── */
+.thread-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 16px;
+}
+
+.thread-detail-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.thread-created-at {
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+/* ── Comment list ── */
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+/* ── Comment item ── */
+.comment-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px 14px;
+  background: #fff;
+}
+
+/* ── Comment header ── */
+.comment-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #555;
+}
+
+.comment-number {
+  font-weight: 700;
+  color: #333;
+  min-width: 1.5em;
+}
+
+.comment-name {
+  color: #222;
+}
+
+.comment-name-link {
+  color: #0066cc;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.comment-trip {
+  color: #006600;
+  font-weight: 600;
+}
+
+.comment-id {
+  font-family: 'Courier New', monospace;
+  color: #555;
+}
+
+.comment-datetime {
+  color: #888;
+}
+
+/* ── Tooltip ── */
+.tooltip-host {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-popup {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 200;
+}
+
+/* ── Comment body ── */
+.comment-body {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.comment-body-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.abone-text {
+  color: #999;
+  font-style: italic;
+}
+
+/* ── Anchor links ── */
+.anchor-link {
+  color: #0000cc;
+  text-decoration: underline;
+}
+
+.anchor-exists {
+  cursor: pointer;
+}
+
+.anchor-exists:hover {
+  color: #0000aa;
+}
+
+.anchor-nonexist {
+  cursor: default;
+}
+
+/* ── Post form ── */
+.post-form {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px 24px 24px;
+  background: #fff;
+}
+
+.post-form-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: #1a1a1a;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-input {
+  width: 100%;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background: #fff;
+  color: #1a1a1a;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.form-input::placeholder {
+  color: #aaa;
+}
+
+.form-input:focus {
+  border-color: #0066cc;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 40px;
+  height: 160px; /* 4x the ~40px of name/email inputs */
+  line-height: 1.6;
+}
+
+.form-error {
+  font-size: 14px;
+  color: #c0392b;
+  margin: 10px 0 0;
+}
+
+.submit-btn {
+  display: block;
+  margin: 16px auto 0;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #333;
+}
+
+.submit-btn:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}

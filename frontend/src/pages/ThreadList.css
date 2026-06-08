@@ -1,0 +1,156 @@
+/* ── Fixed Header ── */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 24px 12px;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.site-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 8px;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+}
+
+.header-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Buttons ── */
+.btn {
+  font-size: 14px;
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: #f5f5f5;
+}
+
+.btn-secondary {
+  color: #666;
+}
+
+/* ── Sort Dropdown ── */
+.sort-dropdown {
+  position: relative;
+}
+
+.dropdown-arrow {
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+.sort-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+  min-width: 110px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 200;
+}
+
+.sort-menu-item {
+  font-size: 14px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.sort-menu-item:hover {
+  background: #f5f5f5;
+}
+
+.sort-menu-item.active {
+  font-weight: 600;
+  color: #0066cc;
+}
+
+/* ── Main Content ── */
+.main-content {
+  padding: 120px 24px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ── Thread List ── */
+.thread-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Thread Card ── */
+.thread-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  background: #fff;
+  transition: box-shadow 0.15s, border-color 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.thread-card:hover {
+  border-color: #aaa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.thread-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.thread-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thread-meta {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ── Empty / Error ── */
+.empty-message {
+  text-align: center;
+  color: #888;
+  font-size: 16px;
+  margin-top: 60px;
+}
+
+.error-message {
+  text-align: center;
+  color: #c0392b;
+  font-size: 16px;
+  margin-top: 60px;
+}
