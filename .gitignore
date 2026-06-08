@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# データベース
+*.db
+
+# Claude
+.claude/
+
+# Node.js
+node_modules/
+frontend/node_modules/
+
+# ビルド成果物
+frontend/dist/
+frontend/build/
+
+# 環境変数
+.env
+.env.local
+.env.*.local
+
+# ログ
+*.log
