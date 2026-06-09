@@ -55,7 +55,7 @@ export default function ThreadList() {
       <header className="fixed-header">
         <h1 className="site-title">匿名掲示板</h1>
         <div className="header-controls">
-          <button className="btn" onClick={() => navigate('/threads/new')}>
+          <button className="btn btn-primary" onClick={() => navigate('/threads/new')}>
             新規作成
           </button>
 
@@ -106,7 +106,7 @@ export default function ThreadList() {
                 <div className="thread-card-title">{thread.title}</div>
                 <div className="thread-card-footer">
                   <span className="thread-meta">{formatDate(thread.updated_at)}</span>
-                  <span className="thread-meta">{thread.comment_count}件</span>
+                  <span className="thread-meta">コメント数：{thread.comment_count}</span>
                 </div>
               </li>
             ))}
