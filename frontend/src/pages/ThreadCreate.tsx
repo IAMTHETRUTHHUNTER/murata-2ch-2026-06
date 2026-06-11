@@ -72,9 +72,9 @@ export default function ThreadCreate() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               onCompositionStart={() => { isComposing.current = true }}
-              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 0) }}
+              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 50) }}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !isComposing.current) {
+                if (e.key === 'Enter' && !isComposing.current && !e.nativeEvent.isComposing) {
                   e.preventDefault()
                   nameRef.current?.focus()
                 }
@@ -89,9 +89,9 @@ export default function ThreadCreate() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               onCompositionStart={() => { isComposing.current = true }}
-              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 0) }}
+              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 50) }}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !isComposing.current) {
+                if (e.key === 'Enter' && !isComposing.current && !e.nativeEvent.isComposing) {
                   e.preventDefault()
                   emailRef.current?.focus()
                 }
@@ -106,9 +106,9 @@ export default function ThreadCreate() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onCompositionStart={() => { isComposing.current = true }}
-              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 0) }}
+              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 50) }}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !isComposing.current) {
+                if (e.key === 'Enter' && !isComposing.current && !e.nativeEvent.isComposing) {
                   e.preventDefault()
                   contentRef.current?.focus()
                 }

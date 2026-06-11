@@ -292,9 +292,9 @@ export default function ThreadDetail() {
               value={formName}
               onChange={(e) => setFormName(e.target.value)}
               onCompositionStart={() => { isComposing.current = true }}
-              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 0) }}
+              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 50) }}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !isComposing.current) {
+                if (e.key === 'Enter' && !isComposing.current && !e.nativeEvent.isComposing) {
                   e.preventDefault()
                   emailRef.current?.focus()
                 }
@@ -309,9 +309,9 @@ export default function ThreadDetail() {
               value={formEmail}
               onChange={(e) => setFormEmail(e.target.value)}
               onCompositionStart={() => { isComposing.current = true }}
-              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 0) }}
+              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 50) }}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !isComposing.current) {
+                if (e.key === 'Enter' && !isComposing.current && !e.nativeEvent.isComposing) {
                   e.preventDefault()
                   contentRef.current?.focus()
                 }

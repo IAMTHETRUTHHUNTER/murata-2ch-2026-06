@@ -137,6 +137,8 @@
   font-weight: 600;
   color: #1a1a1a;
   line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .thread-card-footer {
