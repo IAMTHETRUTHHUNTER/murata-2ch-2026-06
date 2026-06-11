@@ -63,9 +63,12 @@ function renderContent(content: string, existingNumbers: Set<number>) {
                 className="anchor-link anchor-exists"
                 onClick={(e) => {
                   e.preventDefault()
-                  document.getElementById(`comment-${num}`)?.scrollIntoView({
-                    behavior: 'smooth',
-                  })
+                  const el = document.getElementById(`comment-${num}`)
+                  if (!el) return
+                  const header = document.querySelector('.fixed-header') as HTMLElement
+                  const headerHeight = header?.offsetHeight ?? 60
+                  const top = el.getBoundingClientRect().top + window.scrollY - headerHeight - 20
+                  window.scrollTo({ top, behavior: 'smooth' })
                 }}
               >
                 {part}
@@ -289,9 +292,9 @@ export default function ThreadDetail() {
               value={formName}
               onChange={(e) => setFormName(e.target.value)}
               onCompositionStart={() => { isComposing.current = true }}
-              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 0) }}
+              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 50) }}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !isComposing.current) {
+                if (e.key === 'Enter' && !isComposing.current && !e.nativeEvent.isComposing) {
                   e.preventDefault()
                   emailRef.current?.focus()
                 }
@@ -306,9 +309,9 @@ export default function ThreadDetail() {
               value={formEmail}
               onChange={(e) => setFormEmail(e.target.value)}
               onCompositionStart={() => { isComposing.current = true }}
-              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 0) }}
+              onCompositionEnd={() => { setTimeout(() => { isComposing.current = false }, 50) }}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !isComposing.current) {
+                if (e.key === 'Enter' && !isComposing.current && !e.nativeEvent.isComposing) {
                   e.preventDefault()
                   contentRef.current?.focus()
                 }

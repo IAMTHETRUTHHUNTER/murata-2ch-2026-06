@@ -73,6 +73,9 @@
   margin: 0;
   color: #1a1a1a;
   line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 .thread-created-at {
@@ -157,8 +160,12 @@
   font-size: 11px;
   padding: 3px 8px;
   border-radius: 3px;
-  white-space: nowrap;
-  pointer-events: none;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-width: min(280px, calc(100vw - 32px));
+  max-height: 200px;
+  overflow-y: auto;
+  pointer-events: auto;
   z-index: 200;
 }
 

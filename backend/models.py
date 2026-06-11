@@ -52,7 +52,7 @@ class NGWord(Base):
     __tablename__ = "ng_words"
 
     id = Column(Integer, primary_key=True, index=True)
-    word = Column(String(500), unique=True, nullable=False)
+    word = Column(String(500, collation='utf8mb4_bin'), unique=True, nullable=False)
     created_at = Column(DateTime, default=now_jst)
 
 
