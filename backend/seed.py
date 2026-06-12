@@ -8,8 +8,11 @@ import os
 from datetime import datetime, timezone, timedelta
 import random
 import bcrypt
+from dotenv import load_dotenv
 
 sys.path.insert(0, os.path.dirname(__file__))
+
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 from database import SessionLocal, engine
 import models
