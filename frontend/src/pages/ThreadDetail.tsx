@@ -34,11 +34,17 @@ function Tooltip({ label, children }: { label: string; children: ReactNode }) {
 
 // ── Name display ──────────────────────────────────────────
 
+function wrapText(text: string, width = 50): string {
+  const chunks: string[] = []
+  for (let i = 0; i < text.length; i += width) chunks.push(text.slice(i, i + width))
+  return chunks.join('\n')
+}
+
 function NameDisplay({ name, email }: { name: string; email: string }) {
   if (!email) {
     return <span className="comment-name">{name}</span>
   }
-  const tooltipText = email.toLowerCase() === 'sage' ? 'sage' : email
+  const tooltipText = email.toLowerCase() === 'sage' ? 'sage' : wrapText(email)
   return (
     <Tooltip label={tooltipText}>
       <span className="comment-name comment-name-link">{name}</span>

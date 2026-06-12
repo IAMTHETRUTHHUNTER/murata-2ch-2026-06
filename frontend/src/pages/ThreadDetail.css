@@ -161,10 +161,8 @@
   padding: 3px 8px;
   border-radius: 3px;
   white-space: pre-wrap;
-  word-break: break-all;
-  max-width: min(280px, calc(100vw - 32px));
-  max-height: 200px;
-  overflow-y: auto;
+  overflow-wrap: break-word;
+  max-width: min(360px, calc(100vw - 32px));
   pointer-events: auto;
   z-index: 200;
 }
