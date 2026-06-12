@@ -8,6 +8,9 @@ import schemas
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
+# タイミング攻撃対策: IDが存在しない場合もbcrypt処理時間を均一化するためのダミーハッシュ
+_DUMMY_HASH = bcrypt.hashpw(b"dummy", bcrypt.gensalt()).decode()
+
 _ADMIN_TOKEN_COOKIE = "admin_token"
 _ADMIN_TOKEN_MAX_AGE = 60 * 60 * 8  # 8 hours
 
@@ -41,9 +44,9 @@ def login(
         .filter(models.Admin.login_id == body.login_id)
         .first()
     )
-    if not admin or not bcrypt.checkpw(
-        body.password.encode(), admin.password_hash.encode()
-    ):
+    hash_to_check = admin.password_hash if admin else _DUMMY_HASH
+    password_ok = bcrypt.checkpw(body.password.encode(), hash_to_check.encode())
+    if not admin or not password_ok:
         raise HTTPException(status_code=401, detail="invalid_credentials")
 
     token = str(uuid4())
