@@ -49,6 +49,7 @@ def login(
     if not admin or not password_ok:
         raise HTTPException(status_code=401, detail="invalid_credentials")
 
+    db.query(models.AdminSession).delete()
     token = str(uuid4())
     db.add(models.AdminSession(token=token))
     db.commit()

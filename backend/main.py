@@ -13,6 +13,12 @@ from routers import ngwords as ngwords_router
 
 _is_production = os.getenv("ENV") == "production"
 
+_ALLOWED_ORIGINS: frozenset[str] = frozenset(
+    os.getenv("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
+)
+
+_CSRF_PROTECTED_METHODS = frozenset({"POST", "PUT", "PATCH", "DELETE"})
+
 
 class SecurityHeadersMiddleware:
     def __init__(self, app):
@@ -21,6 +27,15 @@ class SecurityHeadersMiddleware:
     async def __call__(self, scope, receive, send):
         if scope["type"] != "http":
             await self.app(scope, receive, send)
+            return
+
+        # CSRF: state-changing requests with a non-allowed Origin are rejected
+        raw_headers = dict(scope.get("headers", []))
+        origin = raw_headers.get(b"origin", b"").decode("latin-1")
+        method = scope.get("method", "")
+        if origin and origin not in _ALLOWED_ORIGINS and method in _CSRF_PROTECTED_METHODS:
+            response = JSONResponse({"detail": "forbidden"}, status_code=403)
+            await response(scope, receive, send)
             return
 
         async def send_with_security_headers(message):
@@ -75,7 +90,7 @@ app.add_middleware(SecurityHeadersMiddleware)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=list(_ALLOWED_ORIGINS),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
