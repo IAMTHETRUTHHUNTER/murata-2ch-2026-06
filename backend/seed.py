@@ -319,7 +319,7 @@ def run():
         if not admin:
             db.add(models.Admin(
                 login_id="admin",
-                password_hash=hash_password("Admin1234"),
+                password_hash=hash_password(os.getenv("ADMIN_PASSWORD", "CureAnswer")),
             ))
             db.commit()
             print("✓ 管理者登録完了")
